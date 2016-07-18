@@ -1,0 +1,31 @@
+<div ng-include="ctrl.menuTemplate.url"></div>
+<div class="jumbotron">
+    <h3>Nueva Lección</h3>
+</div>
+
+<div action="" class="panel panel-primary">
+    <div class="panel-heading"></div>
+    <div class="panel-body">
+        <form action="" class="form">
+            <div class="input-group">
+                <label for="">Semana</label>
+                <input type="numeric" ng-model="ctrl.item.weekend" class="form-control">
+            </div>
+            <div class="input-group">
+                <label for="">Tema</label>
+                <input type="text" ng-model="ctrl.item.subject" class="form-control">
+            </div>
+            <div class="input-group">
+                <label for="">Video</label>
+                <input type="text" ng-model="ctrl.item.video" class="form-control" placeholder="Id video de youtube">
+            </div>
+            <div class="input-group">
+                <label for="">Detalle de la lección</label>
+                <input type="text" ng-model="ctrl.item.description" class="form-control">
+            </div>            
+            <div class="input-group">             
+                <button style="margin-top:5px;"class="btn btn-primary" ng-click="ctrl.submit($event)">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>

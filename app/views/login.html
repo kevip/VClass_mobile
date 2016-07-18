@@ -1,0 +1,16 @@
+
+<div class="jumbotron">
+  <h1>Aula Virtual - Admin</h1>
+  
+</div>
+<form role="form">
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input ng-model="ctrl.item.email" type="email" class="form-control" id="email">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input ng-model="ctrl.item.password" type="password" class="form-control" id="pwd">
+  </div>  
+  <button class="btn btn-default" ng-click="ctrl.submit($event)">Iniciar Sesión</button>
+</form>

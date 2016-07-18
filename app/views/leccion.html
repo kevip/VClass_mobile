@@ -1,0 +1,46 @@
+<div ng-include="ctrl.menuTemplate.url"></div>
+
+<div class="jumbotron">
+    <h2>Editar Lección</h2>    
+</div>
+<form role="form" enctype="multipart/form-data" style="margin-bottom:10px;">
+
+	<div class="form-group">
+		<label for="nombre">Semana</label>
+		<input ng-model="ctrl.item.weekend" type="number" class="form-control">
+	</div>
+	<div class="form-group">
+		<label for="nombre">Tema</label>
+		<input ng-model="ctrl.item.subject" type="text" class="form-control">
+	</div>
+	<div class="form-group">
+		<label for="pwd">Descripción:</label>
+		<textarea ng-model="ctrl.item.description" class="form-control"></textarea>
+	</div>
+	<div class="form-group">
+		<label for="image">Video: </label>
+		<input class="form-control"ng-model="ctrl.item.video" type="text" >    
+	</div>	
+</form>
+<h4 class="">Tareas: </h4>
+<form role="form" enctype="multipart/form-data" class="breadcrumb">
+	<div class="list-group" ng-repeat="task in ctrl.item.tasks">
+		<label for="">{{'Tarea :'+($index+1)}}</label>
+		<a href="" ng-click="ctrl.item.tasks.splice($index, 1);"style="float:right;"><span class="glyphicon glyphicon-remove"></span></a>
+		<div class="form-group">
+			<label for="nombre">Título</label>
+			<input ng-model="task.title" type="text" class="form-control">
+		</div>
+		<div class="form-group">
+			<label for="nombre">Subtítulo</label>
+			<input ng-model="task.subtitle" type="text" class="form-control">
+		</div>
+		<div class="form-group">
+			<label for="nombre">Descripción</label>
+			<textarea ng-model="task.description"  class="form-control"></textarea>
+		</div>
+	</div>
+	<a href=""ng-click="ctrl.item.tasks.push({task: [null]});">Añadir Tarea</a>
+	<!--<button class="btn btn-primary" ng-click="ctrl.saveTask($event)">Guardar</button>-->
+</form>
+<button class="btn btn-primary" ng-click="ctrl.submit($event)">Guardar</button>

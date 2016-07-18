@@ -1,0 +1,55 @@
+<div ng-include="ctrl.menuTemplate.url"></div>
+
+<form class="">
+    <div class="panel panel-default">
+        <div class="panel-heading">Información Básica</div>
+        <div class="panel-body">
+            <div class="input-group">
+              <label for="">Nombre</label>
+              <input type="text" value="{{ctrl.curso.name}}" class="form-control" disabled>
+            </div>
+            <div class="input-group">
+              <label for="">Código</label>
+              <input type="text" value="{{ctrl.curso.code}}" class="form-control"disabled>
+            </div>
+            <div class="input-group">
+              <label for="">Descripcion del curso:</label>
+              <textarea type="text"class="form-control"disabled>{{ctrl.curso.description}}</textarea>
+            </div>
+            <div class="input-group">
+              <label for="">Categoría </label>
+              <input type="text" value="{{ctrl.curso.category.name}}" class="form-control"disabled>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-primary" ng-repeat="lesson in ctrl.curso.lessons" style="margin: 20px 0;">
+        <div for="" class="panel-heading">Leccion - Semana {{ lesson.weekend}}</div>
+        <div class="panel-body">
+            <div class="input-group" >
+              <label for="">Tema</label>
+              <input type="text" value="{{lesson.subject}}" class="form-control"disabled>
+            </div>
+            <div class="input-group" >
+              <label for="">Detalle de la lección:</label>
+              <textarea type="text" class="form-control"disabled>{{lesson.description}}</textarea>
+            </div>        
+            <div class="col-xs-offset-1 panel panel-info" ng-repeat="task in lesson.tasks" style="margin: 5px 0;">
+                <div class="panel-heading" for="">Tarea: {{$index+1}}</div>
+                <div class="panel-body">
+                    <div class="input-group" >
+                      <label for="">Título</label>
+                      <input type="text" value="{{task.title}}" class="form-control"disabled>
+                    </div>
+                    <div class="input-group" >
+                      <label for="">Subtítulo</label>
+                      <input type="text" value="{{task.subtitle}}" class="form-control"disabled>
+                    </div>
+                    <div class="input-group" >
+                      <label for="">Enunciado de la tarea:</label>
+                      <textarea type="text" class="form-control"disabled>{{task.description}}</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
